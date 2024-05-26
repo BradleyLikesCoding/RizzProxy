@@ -25,9 +25,9 @@ form.addEventListener("submit", async (event) => {
 
   let frame = document.getElementById("uv-frame");
   let div = document.getElementById("proxy-div")
-  div.classList.add("show-proxy");
-  div.classList.remove("hide-proxy");
-  div.classList.remove("hide-proxy-animation");
+  
+  showProxy();
+
   frame.src = __uv$config.prefix + __uv$config.encodeUrl(url);
   document.getElementById("nav-bar-address").value = "";
   address.value = "";

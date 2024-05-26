@@ -76,9 +76,7 @@ function goHome() {
 
     iframe.src = "about:blank";
 
-    proxy.classList.remove("show-proxy");
-    proxy.classList.remove("hide-proxy");
-    proxy.classList.add("hide-proxy-animation");
+    hideProxy();
 }
 
 function windowPopout() {
@@ -95,4 +93,12 @@ function goBack() {
 
 function reloadPage() {
     document.getElementById("uv-frame").contentWindow.location.reload();
+}
+
+function showProxy() {
+    document.getElementById("proxy-div").classList = ["show-proxy-div"];
+}
+
+function hideProxy() {
+    document.getElementById("proxy-div").classList = ["hide-proxy-div"];
 }

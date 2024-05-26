@@ -5,13 +5,15 @@
 <head>
   <title>Rizz Proxy</title>
 
-  <link rel="stylesheet" href="index.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Freeman&display=swap" rel="stylesheet">
   <link rel="shortcut icon" content="favicon.ico" />
   <link rel="stylesheet" href="w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></head>
+  <link rel="stylesheet" href="/global/navbar.css" />  
+  <link rel="stylesheet" href="index.css" />
   <script src="baremux/bare.cjs" defer></script>
   <script src="epoxy/index.js" defer></script>
   <script src="uv/uv.bundle.js" defer></script>
@@ -26,7 +28,7 @@
 
 <body>
  
-  <div id="proxy-div" class="hide-proxy">
+  <div id="proxy-div" class="hide-proxy-div">
     <div id="proxy-nav-bar" class="w3-bar">
       <div class="w3-bar-item proxy-nav-bar-item" style="float: left; cursor: pointer; width: 24px;" onclick="goBack()">
         <i class="material-icons">arrow_back</i>
@@ -62,15 +64,21 @@
     <iframe id="uv-frame"></iframe>
   </div>
 
-  <div class="search-box">
-    <form id="uv-form" class="flex-center">
+  <div style="background-color: rgb(29, 30, 34); padding: 10px;">
+    <a href="/" style="font-size: 40px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; margin: 0px; color: white; text-decoration: none;">RIZZ</a>
+    
+    <a href="/settings" class="navbar-link"><i class="fa fa-gear navbar-icon"></i></a>
+    <a href="/games" class="navbar-link"><i class="fa fa-gamepad navbar-icon"></i></a>
+  </div>
+
+  <div class="search-box w3-display-container">
+    <form id="uv-form" class="w3-display-middle">
       <input id="uv-search-engine" value="https://www.google.com/search?q=%s" type="hidden" />
       <p class="title">RIZZ PROXY</p>
       <p class="subtitle">THE RIZZIEST WEB PROXY</p>
       <input id="uv-address" autocomplete="off"
-        class="w3-input round-xxlarge-no-animation"
-        onfocus="this.classList.remove('round-xxlarge'); this.classList.add('round');"
-        onfocusout="this.classList.add('round-xxlarge'); this.classList.remove('round');" type="text"
+        class="w3-input"
+        type="text"
         placeholder="Search the web" />
     </form>
   </div>
