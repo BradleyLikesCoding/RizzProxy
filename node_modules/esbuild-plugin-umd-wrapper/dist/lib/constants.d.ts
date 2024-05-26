@@ -1,0 +1,4 @@
+import type { UmdOptions } from "../declaration";
+export declare const defaultOptions: UmdOptions;
+export declare const alphabet: string[];
+export declare const umdFooter = "if (typeof module.exports == \"object\" && typeof exports == \"object\") {\n  var __cp = (to, from, except, desc) => {\n    if ((from && typeof from === \"object\") || typeof from === \"function\") {\n      for (let key of Object.getOwnPropertyNames(from)) {\n        if (!Object.prototype.hasOwnProperty.call(to, key) && key !== except)\n        Object.defineProperty(to, key, {\n          get: () => from[key],\n          enumerable: !(desc = Object.getOwnPropertyDescriptor(from, key)) || desc.enumerable,\n        });\n      }\n    }\n    return to;\n  };\n  module.exports = __cp(module.exports, exports);\n}\nreturn module.exports;\n}))";
