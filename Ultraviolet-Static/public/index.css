@@ -51,7 +51,35 @@ html, body {
   font-size: 25px;
 }
 
-#proxy-div {
+@keyframes show-proxy-div {
+  from {
+    bottom: -100vh;
+    top: 100vh;
+  }
+  to {
+    bottom: 0;
+    top: 0;
+  }
+}
+
+@keyframes hide-proxy-div {
+  from {
+    bottom: 0;
+    top: 0;
+    display: block;
+  }
+  to {
+    bottom: -100vh;
+    top: 100vh;
+    display: block;
+  }
+}
+
+.hide-proxy-div {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
   width: 100vw;
@@ -59,38 +87,26 @@ html, body {
   margin: 0;
   padding: 0;
   background-color: white;
-  z-index: 10;
-  position: fixed;
-}
-
-@keyframes proxy-div {
-  from {
-    display: block;
-    top: 100vh;
-    bottom: -100vh;
-  }
-  to {
-    display: block;
-    top: 0;
-    bottom: 0;
-  }
-}
-
-.hide-proxy-div {
-  display: none;
-  top: 100vh;
-  bottom: -100vh;
-  animation-name: proxy-div;
+  animation-name: hide-proxy-div;
   animation-duration: 0.5s;
-  animation-direction: reverse;
+  z-index: 10;
 }
 
 .show-proxy-div {
   display: block;
+  position: fixed;
   top: 0;
   bottom: 0;
-  animation-name: proxy-div;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  animation-name: show-proxy-div;
   animation-duration: 0.5s;
+  z-index: 10;
 }
 
 #uv-frame {
