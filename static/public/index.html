@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  <title>Rizz Proxy</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Freeman&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" content="favicon.ico" />
+  <link rel="stylesheet" href="w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<link rel="stylesheet" href="/global/navbar.css" />
+<link rel="stylesheet" href="index.css" />
+<script src="baremux/bare.cjs" defer></script>
+<script src="epoxy/index.js" defer></script>
+<script src="uv/uv.bundle.js" defer></script>
+<script src="uv/uv.config.js" defer></script>
+<script src="register-sw.js" defer></script>
+<script src="search.js" defer></script>
+<script src="index.js" defer></script>
+<script src="browser.js"></script>
+<script type="application/ld+json"></script>
+<script src="global/all.js"></script>
+</head>
+
+<body>
+
+  <div id="proxy-div" class="hide-proxy-div">
+    <div id="proxy-nav-bar" class="w3-bar">
+      <div class="w3-bar-item proxy-nav-bar-item" style="float: left; cursor: pointer; width: 24px;" onclick="goBack()">
+        <i class="material-icons">arrow_back</i>
+      </div>
+      <div class="w3-bar-item proxy-nav-bar-item" style="float: left; cursor: pointer; width: 24px;"
+        onclick="goForward()">
+        <i class="material-icons">arrow_forward</i>
+      </div>
+      <div class="w3-bar-item proxy-nav-bar-item" style="float: left; cursor: pointer; width: 24px;"
+        onclick="reloadPage()">
+        <i class="material-icons">refresh</i>
+      </div>
+      <div class="w3-bar-item proxy-nav-bar-item" style="float: left; cursor: pointer; width: 24px;">
+        <i id="https-lock" class="material-icons">pending</i>
+      </div>
+      <div class="w3-bar-item" style="padding: 0;">
+        <form id="nav-bar-form">
+          <input id="nav-bar-address" class="w3-input w3-round" type="text" placeholder="Search the web" />
+        </form>
+      </div>
+
+      <div class="w3-bar-item proxy-nav-bar-item" style="float: right; cursor: pointer; padding: 8px;"
+        onclick="goHome();">
+        <i class="material-icons">home</i>
+      </div>
+      <div class="w3-bar-item proxy-nav-bar-item" style="float: right; cursor: pointer; padding: 8px;"
+        onclick="windowPopout();">
+        <i class="material-icons">open_in_new</i>
+      </div>
+      <div class="w3-bar-item proxy-nav-bar-item" style="float: right; cursor: pointer; padding: 8px;"
+        onclick="openEruda();">
+        <i class="material-icons">code</i>
+      </div>
+      <div class="w3-bar-item proxy-nav-bar-item" style="float: right; cursor: pointer; padding: 8px;"
+        onclick="proxyFullscreen();">
+        <i class="material-icons">fullscreen</i>
+      </div>
+    </div>
+    <iframe id="uv-frame"></iframe>
+  </div>
+
+  <div class="w3-display-container" style="background-color: rgb(29, 30, 34); padding: 10px; height: 80px;">
+    <a href="/" class="navbar-title w3-display-left	">RIZZ</a>
+
+    <div style="w3-display-right">
+      <a href="/settings" class="navbar-link"><i class="fa fa-gear navbar-icon"></i></a>
+      <a href="/games" class="navbar-link"><i class="fa fa-gamepad navbar-icon"></i></a>
+    </div>
+  </div>
+
+  <div class="search-box w3-display-container">
+    <form id="uv-form" class="w3-display-middle">
+      <input id="uv-search-engine" value="https://www.google.com/search?q=%s" type="hidden" />
+      <p class="title">RIZZ PROXY</p>
+      <p class="subtitle">THE RIZZIEST WEB PROXY</p>
+      <input id="uv-address" autocomplete="off" class="w3-input" type="text" placeholder="Search the web" />
+    </form>
+  </div>
+  <script src="browser.js"></script>
+</body>
+
+</html>

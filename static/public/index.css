@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(to bottom, rgb(56, 67, 73), rgb(47, 80, 99));
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.search-box {
+  text-align: center;
+  height: calc(100vh - 80px);
+  margin: 0;
+}
+
+#uv-address {
+  text-align: center;
+  width: 35vw;
+  height: 60px;
+  font-size: 24px;
+  border: none;
+  background-color: rgb(29, 30, 34);
+  color: rgb(255, 255, 255);
+  border-radius: 24px;
+  transition: border-radius 0.5s;
+}
+
+#uv-address:focus {
+  border-radius: 4px;
+}
+
+.title {
+  font-family: "Freeman", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 75px;
+  margin: 0;
+}
+
+.subtitle {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  margin-bottom: 15px;
+  font-size: 25px;
+}
+
+@keyframes show-proxy-div {
+  from {
+    bottom: -100vh;
+    top: 100vh;
+  }
+  to {
+    bottom: 0;
+    top: 0;
+  }
+}
+
+@keyframes hide-proxy-div {
+  from {
+    bottom: 0;
+    top: 0;
+    display: block;
+  }
+  to {
+    bottom: -100vh;
+    top: 100vh;
+    display: block;
+  }
+}
+
+.hide-proxy-div {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  animation-name: hide-proxy-div;
+  animation-duration: 0.5s;
+  z-index: 10;
+}
+
+.show-proxy-div {
+  display: block;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  animation-name: show-proxy-div;
+  animation-duration: 0.5s;
+  z-index: 10;
+}
+
+#uv-frame {
+  height: calc(100vh - 40px);
+  width: 100vw;
+  border: none;
+}
+
+#proxy-nav-bar {
+  height: 40px;
+  background-color: rgb(29, 30, 34);
+  color: white;
+}
+
+.proxy-nav-bar-item {
+  margin: 40;
+  padding: 4;
+}
+
+#nav-bar-address {
+  width: 35vw;
+  height: 30px;
+  font-size: 16px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 15px;
+  border: none;
+  color: white;
+  background-color: rgb(29, 30, 34);
+  transition: background-color 0.3s;
+}
+
+#nav-bar-address:focus {
+  background-color: rgb(55, 58, 70);
+}
+
+#nav-bar-form {
+  height: 40px;
+  margin: 0;
+  padding: 0;
+}

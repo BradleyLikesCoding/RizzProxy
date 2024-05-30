@@ -6,9 +6,29 @@ import { epoxyPath } from "@mercuryworkshop/epoxy-transport";
 import { baremuxPath } from "@mercuryworkshop/bare-mux";
 import { join } from "node:path";
 import { hostname } from "node:os";
-import wisp from "wisp-server-node"
+import wisp from "wisp-server-node";
+import session from "express-session";
+import MemoryStore from "memorystore";
 
 const app = express();
+
+app.use(session({
+    cookie: { maxAge: 1000 * 60 * 60 },
+    resave: false,
+    secret: 'aeopiguhr098qw34h59p8o3gjo9fd58346'
+}));
+
+app.use(function(req, res, next) {
+  if (req.session.loggedin) {
+    next();
+  } else if (req.path == "/loginhagbkluegvrt") {
+    req.session.loggedin = true;
+    res.redirect("/");
+  } else {
+    res.sendFile(join(publicPath, "login.html"));
+  }
+});
+
 // Load our publicPath first and prioritize it over UV.
 app.use(express.static(publicPath));
 // Load vendor files last.
