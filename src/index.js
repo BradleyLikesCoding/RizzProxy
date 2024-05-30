@@ -9,8 +9,11 @@ import { hostname } from "node:os";
 import wisp from "wisp-server-node";
 import session from "express-session";
 import MemoryStore from "memorystore";
+import bodyParser from "body-parser";
 
 const app = express();
+
+var jsonParser = bodyParser.json()
 
 app.use(session({
     cookie: { maxAge: 1000 * 60 * 60 },
@@ -18,12 +21,18 @@ app.use(session({
     secret: 'aeopiguhr098qw34h59p8o3gjo9fd58346'
 }));
 
-app.use(function(req, res, next) {
-  if (req.session.loggedin) {
+app.use(jsonParser, function(req, res, next) {
+  if (req.path == "/login") {
+    if(req.body.password == "rizzproxy=ontop") {
+      req.session.loggedin = true;
+      res.status(200);
+      res.send();
+    } else {
+      res.status(401);
+      res.send();
+    }
+  } else if (req.session.loggedin) {
     next();
-  } else if (req.path == "/loginhagbkluegvrt") {
-    req.session.loggedin = true;
-    res.redirect("/");
   } else {
     res.sendFile(join(publicPath, "login.html"));
   }

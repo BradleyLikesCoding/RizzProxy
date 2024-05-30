@@ -19,11 +19,13 @@
     "@mercuryworkshop/bare-mux": "^1.1.0",
     "@mercuryworkshop/epoxy-transport": "^1.1.0",
     "@titaniumnetwork-dev/ultraviolet": "^3.1.2",
+    "body-parser": "^1.20.2",
     "express": "^4.18.2",
+    "express-session": "latest",
     "ultraviolet-static": "file:static",
     "wisp-server-node": "^1.0.6",
     "ws": "^8.16.0",
-    "express-session": "latest"
+    "body-parser": "latest"
   },
   "devDependencies": {
     "eslint": "^8.36.0",
