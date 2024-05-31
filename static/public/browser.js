@@ -80,7 +80,13 @@ function goHome() {
 }
 
 function windowPopout() {
-    window.open(document.getElementById("uv-frame").contentWindow.location.href);
+    var win = window.open();
+    var iframe = win.document.createElement('iframe');
+    iframe.style.width = "100%";
+    iframe.style.height = "100%";
+    iframe.style.border = "none";
+    iframe.src = document.getElementById("uv-frame").contentWindow.location.href;
+    win.document.body.appendChild(iframe)
 }
 
 function goForward() {
