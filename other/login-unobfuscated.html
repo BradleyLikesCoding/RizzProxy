@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+
+  <head>
+    <title>Page not found</title>
+  </head>
+
+  <body>
+    <h1>
+    Page not found
+    </h1>
+    <script>
+     keys = [];
+      document.addEventListener("keydown", function(e) {
+        keys = keys.filter(function(letter) {
+          return letter != e.key;
+        });
+        keys.push(event.key)
+      });
+      document.addEventListener("keyup", function(e) {
+        keys = keys.filter(function(letter) {
+          return letter != e.key;
+        });
+      });
+
+      function check() {
+        if (keys.includes("w") && keys.includes("r") && keys.includes("i") && keys.includes("z")) {
+          setTimeout(check2, 2000);
+          setTimeout(check2, 3000);
+          setTimeout(check2, 5000);
+        }
+      }
+
+      setInterval(check, 100);
+
+      checking = false
+
+      function check2() {
+        if (keys.includes("p") && keys.includes("r") && keys.includes("x") && keys.includes("y") && checking == false) {
+          checking = true;
+          document.body.style.backgroundColor = "#000000";
+          document.body.innerHTML = '<h1 style="color: #11ff00; text-align: center; margin-top: 40vh;">ENTER THE PASSWORD</h1>';
+          setTimeout(async function() {
+            var password = prompt("ENTER YOUR PASSWORD:");
+            var res = await fetch('/login', {
+              method: 'POST',
+              body: JSON.stringify({password:password}),
+              headers: {
+                  'Content-Type': 'application/json'
+              }
+            }).then(res=>{
+            if (res.status == 200) {
+              location.href = "/";
+            } else {
+              document.body.innerHTML = '<h1 style="color: #11ff00; text-align: center; margin-top: 40vh;">INVALID PASSWORD</h1>';
+              setTimeout(function() {
+                location.reload();
+              }, 1500);
+            }
+            });
+          }, 750);
+
+        }
+      }
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(to bottom, rgb(56, 67, 73), rgb(47, 80, 99));
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.main-div {
+  text-align: center;
+  height: calc(100vh - 80px);
+  margin: 0;
+}
+
+.title {
+  font-family: "Freeman", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 75px;
+  padding: 20px;
+  margin: 0;
+}
+
+.games-div {
+  width: 80vw;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+@keyframes show-proxy-div {
+  from {
+    bottom: -100vh;
+    top: 100vh;
+  }
+  to {
+    bottom: 0;
+    top: 0;
+  }
+}
+
+@keyframes hide-proxy-div {
+  from {
+    bottom: 0;
+    top: 0;
+    display: block;
+  }
+  to {
+    bottom: -100vh;
+    top: 100vh;
+    display: block;
+  }
+}
+
+.hide-proxy-div {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  animation-name: hide-proxy-div;
+  animation-duration: 0.5s;
+  z-index: 10;
+}
+
+.show-proxy-div {
+  display: block;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  animation-name: show-proxy-div;
+  animation-duration: 0.5s;
+  z-index: 10;
+}
+
+#uv-frame {
+  height: calc(100vh - 40px);
+  width: 100vw;
+  border: none;
+}

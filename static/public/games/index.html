@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  <title>Rizz Proxy</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Freeman&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" content="/favicon.ico" />
+  <link rel="stylesheet" href="/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<link rel="stylesheet" href="/global/navbar.css" />
+<link rel="stylesheet" href="index.css" />
+<script src="/baremux/bare.cjs" defer></script>
+<script src="/epoxy/index.js" defer></script>
+<script src="/uv/uv.bundle.js" defer></script>
+<script src="/uv/uv.config.js" defer></script>
+<script src="/register-sw.js" defer></script>
+<script src="index.js" defer></script>
+<script src="/global/all.js"></script>
+</head>
+
+<body>
+
+  <div id="proxy-div" class="hide-proxy-div">
+    <iframe onkeypress="sosKeyPressListener(event)" id="uv-frame"></iframe>
+  </div>
+
+  <div class="w3-display-container" style="background-color: rgb(29, 30, 34); padding: 10px; height: 80px;">
+    <a href="/" class="navbar-title w3-display-left">RIZZ</a>
+    <div style="w3-display-right">
+      <a href="/settings" class="navbar-link"><i class="fa fa-gear navbar-icon"></i></a>
+      <a href="/games" class="navbar-link"><i class="fa fa-gamepad navbar-icon"></i></a>
+    </div>
+  </div>
+
+  <div class="main-div">
+      <p class="title">GAMES</p>
+      <div id="games-div">
+        insert games here
+      </div>
+  </div>
+</body>
+
+</html>
