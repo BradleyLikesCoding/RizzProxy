@@ -24,7 +24,7 @@
   <script src="/uv/uv.bundle.js" defer></script>
   <script src="/uv/uv.config.js" defer></script>
   <script src="/register-sw.js" defer></script>
-  <script src="index.js" defer></script>
+  <script src="openGame.js" defer></script>
   <script src="/global/all.js"></script>
 </head>
 
@@ -44,6 +44,8 @@
 
   <div class="main-div">
     <p class="title">GAMES</p>
+    <input type="text" placeholder="Search" id="games-search-bar" class="w3-input w3-round-large search-bar" oninput="searchGames(this)">
+    <div class="pages"><b class="switch-page" onclick="currentPage -= 1; searchGames(document.getElementById('games-search-bar'));">< LAST</b><b id="page-number">1</b><b class="switch-page" onclick="currentPage += 1; searchGames(document.getElementById('games-search-bar'));">NEXT ></b></div>
     <div id="games-container">
       <h1>LOADING...</h1>
     </div>

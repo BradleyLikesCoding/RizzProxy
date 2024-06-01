@@ -11,6 +11,33 @@ html, body {
   margin: 0;
 }
 
+.search-bar {
+  width: 30%;
+  text-align: center;
+  margin: auto;
+  border: none;
+  font-size: 20px;
+  margin-bottom: 2vh;
+  padding: 1vh;
+  transition-property: padding 0.5s, margin 0.5s;
+  background-color: rgb(29, 30, 34);
+  color: rgb(255, 255, 255);
+  transition: background-color 0.5s;
+}
+
+.search-bar:focus {
+  background-color: rgb(47, 50, 61);
+}
+
+.pages {
+  margin-bottom: 1vh;
+}
+
+.switch-page {
+  margin: 2vh;
+  cursor: pointer;
+}
+
 .game-container {
   width: 80vw;
   margin-left: 10vw;
@@ -33,6 +60,13 @@ html, body {
   border-radius: 10px;
   height: 14vw;
   overflow: hidden;
+  transition: margin 0.5s, width 0.5s, height 0.5s;
+}
+
+.game:hover {
+  margin: 0;
+  width: 16vw;
+  height: 16vw;
 }
 
 .game-image {
@@ -77,6 +111,7 @@ html, body {
   font-size: 75px;
   padding: 20px;
   margin: 0;
+  padding-bottom: 0;
 }
 
 @keyframes show-proxy-div {
