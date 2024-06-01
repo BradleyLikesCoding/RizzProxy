@@ -18,14 +18,21 @@ html, body {
   padding: 0;
 }
 
+.game-row {
+  margin: 0;
+  height: 14vw;
+  margin-bottom: 4vw;
+}
+
 .game {
   display: inline-block;
-  width: 16vw;
+  width: 14vw;
   padding: 5px;
-  margin: 2vw;
+  margin-left: 1vw;
+  margin-right: 1vw;
   background-color: black;
   border-radius: 10px;
-  height: 16vw;
+  height: 14vw;
 }
 
 .game-image {
@@ -34,6 +41,7 @@ html, body {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 5px;
 }
 
 .game-image-container {
@@ -45,7 +53,7 @@ html, body {
 }
 
 .game-title {
-  font-size: 1.5vw;
+  font-size: 1.25vw;
   color: white;
   margin: 0;
   padding: 0.25vw;
