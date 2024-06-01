@@ -6,7 +6,7 @@ function getGameHTML(game) {
   return(`
   <div class="game" onclick="openGame('${game["url"]}')">
     <div class="game-image-container">
-      <img class="game-image" src="https://images.crazygames.com/${game["image"]}">
+      <img class="game-image" src="${"/proxiedassets/?url=https://images.crazygames.com/game" + ["image"]}">
     </div>
     <p class="game-title">
       ${game["name"]}

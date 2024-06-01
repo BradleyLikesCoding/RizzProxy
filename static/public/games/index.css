@@ -19,20 +19,20 @@ html, body {
 }
 
 .game-row {
+  display: block;
   margin: 0;
-  height: 14vw;
-  margin-bottom: 4vw;
+  height: 16vw;
 }
 
 .game {
   display: inline-block;
   width: 14vw;
   padding: 5px;
-  margin-left: 1vw;
-  margin-right: 1vw;
+  margin: 1vw;
   background-color: black;
   border-radius: 10px;
   height: 14vw;
+  overflow: hidden;
 }
 
 .game-image {
@@ -52,16 +52,15 @@ html, body {
   cursor: pointer;
 }
 
-.game-title {
+.game-title { 
   font-size: 1.25vw;
-  color: white;
-  margin: 0;
   padding: 0.25vw;
-  text-align: center;
+  margin: 0;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
   cursor: pointer;
+  color: white;
 }
 
 .main-div {
