@@ -5,7 +5,7 @@ Features:
 -Clean UI
 -Developer console (I used eruda https://github.com/liriliri/eruda)
 -Single tab browser with back/forwards arrows, reload button, search/url bar, cloak in about:blank page in new tab, and fullscreen
-
+ 
 How to deploy to a server:
 1: Clone the repository on your server (run "git clone https://github.com/BradleyLikesCoding/Rizz-Proxy")
 2: Install the nodejs packages (run "npm i")
