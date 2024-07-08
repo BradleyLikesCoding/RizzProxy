@@ -1,3 +1,5 @@
+const requireLogin = false /* This will make the website go to a 404 page if set to true to make it harder to be found and blocked. To get past the 404, press the keys WRIZ on your keyboard at the same time. Then right after you release it, quickly hold down the keys PRXY at the same time until it asks for a passcode. The deafult passcode is rizzproxy=ontop but it can be customized on line 29 */
+
 import express from "express";
 import { createServer } from "node:http";
 import { publicPath } from "ultraviolet-static";
@@ -18,12 +20,13 @@ var jsonParser = bodyParser.json()
 app.use(session({
     cookie: { maxAge: 1000 * 60 * 60 },
     resave: false,
-    secret: 'aeopiguhr098qw34h59p8o3gjo9fd58346'
+    secret: process.env.RPKEY
 }));
 
+if(requireLogin) {
 app.use(jsonParser, function(req, res, next) {
   if (req.path == "/login") {
-    if(req.body.password == "rizzproxy=ontop") {
+    if(req.body.password == "rizzproxy=ontop") { //change the passcode to whatever you want. Note that a passcode is only required if you turn on password protection and the 404 disguise. 
       req.session.loggedin = true;
       res.status(200);
       res.send();
@@ -37,7 +40,7 @@ app.use(jsonParser, function(req, res, next) {
     res.sendFile(join(publicPath, "login.html"));
   }
 });
-
+}
 // Load our publicPath first and prioritize it over UV.
 app.use(express.static(publicPath));
 // Load vendor files last.
