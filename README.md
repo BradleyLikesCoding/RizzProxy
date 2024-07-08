@@ -1,6 +1,6 @@
-Rizz Proxy - A modern web proxy
+<h2>Rizz Proxy - A modern web proxy</h2>
 
-Features:
+<h3>Features:</h3>
 
 -4k games
 
@@ -13,7 +13,7 @@ Features:
 -Single tab browser with back/forwards arrows, reload button, search/url bar, cloak in about:blank page in new tab, and fullscreen
 
  
-How to deploy to a server:
+<h3>How to deploy to a server:</h3>
 
 1: Clone the repository on your server (run "git clone https://github.com/BradleyLikesCoding/Rizz-Proxy")
 
