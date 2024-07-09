@@ -18,8 +18,10 @@
 
 1: Clone the repository on your server (run "git clone https://github.com/BradleyLikesCoding/Rizz-Proxy")
 
-2: Install the nodejs packages (run "npm i")
+2: Go to the directory Rizz Proxy is stored in (run "cd Rizz-Proxy")
 
-3: Start the server (run "PORT=80 npm start" - Note: Edit the number to change the port it is hosted on)
+3: Install the nodejs packages (run "npm i")
 
-4: You have successfully deployed Rizz Proxy! 
+4: Start the server (run "PORT=80 npm start" - Note: Edit the number to change the port it is hosted on)
+
+5: You have successfully deployed Rizz Proxy! 
