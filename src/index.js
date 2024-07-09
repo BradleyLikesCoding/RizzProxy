@@ -12,6 +12,7 @@ import wisp from "wisp-server-node";
 import session from "express-session";
 import MemoryStore from "memorystore";
 import bodyParser from "body-parser";
+import crypto from 'crypto';
 
 const app = express();
 
@@ -20,7 +21,7 @@ var jsonParser = bodyParser.json()
 app.use(session({
     cookie: { maxAge: 1000 * 60 * 60 },
     resave: false,
-    secret: process.env.RPKEY
+    secret: crypto.randomBytes(32).toString('hex');
 }));
 
 if(requireLogin) {
