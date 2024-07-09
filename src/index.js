@@ -21,7 +21,7 @@ var jsonParser = bodyParser.json()
 app.use(session({
     cookie: { maxAge: 1000 * 60 * 60 },
     resave: false,
-    secret: crypto.randomBytes(32).toString('hex');
+    secret: crypto.randomBytes(32).toString('hex')
 }));
 
 if(requireLogin) {
