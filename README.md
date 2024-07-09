@@ -22,6 +22,6 @@
 
 3: Install the nodejs packages (run "npm i")
 
-4: Start the server (run "PORT=80 npm start" - Note: Edit the number to change the port it is hosted on)
+4: Start the server (run "PORT=80 npm start" or "$env:PORT=80; npm start" - Note: Edit the number to change the port it is hosted on)
 
 5: You have successfully deployed Rizz Proxy! 
