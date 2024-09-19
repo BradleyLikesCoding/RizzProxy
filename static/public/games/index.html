@@ -45,7 +45,7 @@
   <div class="main-div">
     <p class="title">GAMES</p>
     <input type="text" placeholder="Search" id="games-search-bar" class="w3-input w3-round-large search-bar" oninput="searchGames(this)">
-    <div class="pages"><b class="switch-page" onclick="currentPage -= 1; setGames(currentPage); setArrows()">< LAST</b><b id="page-number">1</b><b class="switch-page" onclick="currentPage += 1; setGames(currentPage); setArrows()">NEXT ></b></div>
+    <div class="pages"><b class="switch-page" onclick="currentPage -= 1; setGames(currentPage); setPageArrows()">< LAST</b><b id="page-number">1</b><b class="switch-page" onclick="currentPage += 1; setGames(currentPage); setPageArrows()">NEXT ></b></div>
     <div id="games-container">
       <h1>LOADING...</h1>
     </div>
