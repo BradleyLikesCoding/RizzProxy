@@ -18,7 +18,7 @@ form.addEventListener("submit", async (event) => {
   try {
     await registerSW();
   } catch (err) {
-    alert("Error. Please contact a server administrator.")
+    alert("Error. Please contact a server administrator. Error Message: " + err.message)
   }
 
   const url = search(address.value, searchEngine.value);
