@@ -15,21 +15,28 @@ const searchEngine = document.getElementById("uv-search-engine");
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
 
-  try {
-    await registerSW();
-  } catch (err) {
-    alert("Error. Please contact a server administrator. Error Message: " + err.message)
-  }
-
   const url = search(address.value, searchEngine.value);
+  address.value = "";
 
-  let frame = document.getElementById("uv-frame");
-  let div = document.getElementById("proxy-div")
+  let frame = document.getElementById("frame");
   
   showProxy();
 
-  frame.src = __uv$config.prefix + __uv$config.encodeUrl(url);
-  document.getElementById("nav-bar-address").value = "";
-  address.value = "";
-  document.getElementById("https-lock").innerText = "pending";
+  frame.src = "/tab?page=" + __uv$config.encodeUrl(url);
 });
+
+function goHome() {
+  let iframe = document.getElementById("frame");
+
+  iframe.src = "about:blank";
+
+  hideProxy();
+}
+
+function showProxy() {
+  document.getElementById("proxy-div").classList = ["show-proxy-div"];
+}
+
+function hideProxy() {
+  document.getElementById("proxy-div").classList = ["hide-proxy-div"];
+}

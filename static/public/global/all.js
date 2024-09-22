@@ -1,4 +1,4 @@
-var lettersForSOS = "sos123";
+/*var lettersForSOS = "sos123";
 var sosIndex = 0;
 
 window.addEventListener("keypress", sosKeyPressListener);
@@ -26,4 +26,4 @@ function startSos() {
     document.cookie = Cookies[i] + "=; expires=" + new Date(0).toUTCString();
   }
   location.href="https://launchpad.classlink.com/aacps";
-}
+}*/

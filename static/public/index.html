@@ -22,7 +22,6 @@
 <script src="register-sw.js" defer></script>
 <script src="search.js" defer></script>
 <script src="index.js" defer></script>
-<script src="browser.js" defer></script>
 <script type="application/ld+json" defer></script>
 <script src="global/all.js" defer></script>
 </head>
@@ -31,44 +30,12 @@
 
   <div id="proxy-div" class="hide-proxy-div">
     <div id="proxy-nav-bar" class="w3-bar">
-      <div class="w3-bar-item proxy-nav-bar-item" style="float: left; cursor: pointer; width: 24px;" onclick="goBack()">
-        <i class="material-icons">arrow_back</i>
-      </div>
-      <div class="w3-bar-item proxy-nav-bar-item" style="float: left; cursor: pointer; width: 24px;"
-        onclick="goForward()">
-        <i class="material-icons">arrow_forward</i>
-      </div>
-      <div class="w3-bar-item proxy-nav-bar-item" style="float: left; cursor: pointer; width: 24px;"
-        onclick="reloadPage()">
-        <i class="material-icons">refresh</i>
-      </div>
-      <div class="w3-bar-item proxy-nav-bar-item" style="float: left; cursor: pointer; width: 24px;">
-        <i id="https-lock" class="material-icons">pending</i>
-      </div>
-      <div class="w3-bar-item" style="padding: 0;">
-        <form id="nav-bar-form">
-          <input id="nav-bar-address" class="w3-input w3-round" type="text" placeholder="Search the web" />
-        </form>
-      </div>
-
       <div class="w3-bar-item proxy-nav-bar-item" style="float: right; cursor: pointer; padding: 8px;"
         onclick="goHome();">
         <i class="material-icons">home</i>
       </div>
-      <div class="w3-bar-item proxy-nav-bar-item" style="float: right; cursor: pointer; padding: 8px;"
-        onclick="windowPopout();">
-        <i class="material-icons">open_in_new</i>
-      </div>
-      <div class="w3-bar-item proxy-nav-bar-item" style="float: right; cursor: pointer; padding: 8px;"
-        onclick="openEruda();">
-        <i class="material-icons">code</i>
-      </div>
-      <div class="w3-bar-item proxy-nav-bar-item" style="float: right; cursor: pointer; padding: 8px;"
-        onclick="proxyFullscreen();">
-        <i class="material-icons">fullscreen</i>
-      </div>
     </div>
-    <iframe onkeypress="sosKeyPressListener(event)" id="uv-frame"></iframe>
+    <iframe class="tab" id="frame"></iframe>
   </div>
 
   <div class="w3-display-container" style="background-color: rgb(29, 30, 34); padding: 10px; height: 80px;">

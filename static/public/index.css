@@ -75,6 +75,10 @@ html, body {
   }
 }
 
+#proxy-div {
+  transition: background-color 0.5s;
+}
+
 .hide-proxy-div {
   display: none;
   position: fixed;
@@ -86,7 +90,7 @@ html, body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  background-color: white;
+  background-color: rgb(0, 0, 0);
   animation-name: hide-proxy-div;
   animation-duration: 0.5s;
   z-index: 10;
@@ -109,10 +113,13 @@ html, body {
   z-index: 10;
 }
 
-#uv-frame {
-  height: calc(100vh - 40px);
+.tab {
+  margin: 0;
+  padding: 0;
   width: 100vw;
+  height: calc(100vh - 40px);
   border: none;
+  background-color: inherit;
 }
 
 #proxy-nav-bar {
@@ -124,27 +131,4 @@ html, body {
 .proxy-nav-bar-item {
   margin: 40;
   padding: 4;
-}
-
-#nav-bar-address {
-  width: 35vw;
-  height: 30px;
-  font-size: 16px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  margin-left: 15px;
-  border: none;
-  color: white;
-  background-color: rgb(29, 30, 34);
-  transition: background-color 0.3s;
-}
-
-#nav-bar-address:focus {
-  background-color: rgb(55, 58, 70);
-}
-
-#nav-bar-form {
-  height: 40px;
-  margin: 0;
-  padding: 0;
 }
