@@ -26,10 +26,7 @@ form.addEventListener("submit", async (event) => {
 });
 
 function goHome() {
-  let iframe = document.getElementById("frame");
-
-  iframe.src = "about:blank";
-
+  closeAllTabs();
   hideProxy();
 }
 

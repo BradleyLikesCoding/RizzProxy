@@ -5,7 +5,7 @@ var tabIds = [];
 function newTab(url = "/tab?page=" + __uv$config.encodeUrl("https://google.com")) {
   var el = document.getElementById("tabBarTabs");
   var tabId = getTabId();
-  el.innerHTML += `<div class="tabBarTab w3-bar-item" style="width: 225px" onclick="openTab(` + tabId + `)">
+  el.innerHTML += `<div class="tabBarTab w3-bar-item" id="tab ` + tabId + `" style="width: 225px" onclick="openTab(` + tabId + `)">
   <div style="display: inline-block;
       width: 170px;
       overflow-x: hidden;
@@ -51,6 +51,13 @@ function openTab(tabId) {
   }
   currentTab = tabId;
   document.getElementById("frame" + currentTab).style.display = "block";
+}
+
+function closeAllTabs() {
+  document.getElementById("frames").innerHTML = "";
+  document.getElementById("tabBarTabs").innerHTML = "";
+  tabIds = [];
+  currentTab = 0;
 }
 
 function closeTab(id) {
