@@ -12,17 +12,17 @@ const address = document.getElementById("uv-address");
  */
 const searchEngine = document.getElementById("uv-search-engine");
 
+const startPage = "https://google.com";
+
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   const url = search(address.value, searchEngine.value);
   address.value = "";
-
-  let frame = document.getElementById("frame");
   
   showProxy();
 
-  frame.src = "/tab?page=" + __uv$config.encodeUrl(url);
+  newTab("/tab?page=" + __uv$config.encodeUrl(url));
 });
 
 function goHome() {

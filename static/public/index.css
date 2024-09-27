@@ -120,15 +120,41 @@ html, body {
   height: calc(100vh - 40px);
   border: none;
   background-color: inherit;
+  display: none;
 }
 
 #proxy-nav-bar {
-  height: 40px;
-  background-color: rgb(29, 30, 34);
+  height: 45px;
+  background-color: rgb(49, 50, 64);
   color: white;
 }
 
-.proxy-nav-bar-item {
-  margin: 40;
-  padding: 4;
+.tabBarTab {
+  background-color: rgb(29, 30, 34);
+  margin-top: 45px;
+  margin-left: 5px;
+  height: 45px;
+  border-radius: 8px;
+  float: left; 
+  padding: 8px;
+  transition-property: margin-top;
+  transition-duration: 0.25s;
+}
+
+#newTab {
+  background-color: rgb(29, 30, 34);
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  height: 35px;
+  width: 35px;
+  border-radius: 8px;
+  float: left; 
+  padding: 0px;
+  cursor: pointer;
+}
+
+#tabBarTabs {
+  margin: 0;
+  padding: 0;
 }

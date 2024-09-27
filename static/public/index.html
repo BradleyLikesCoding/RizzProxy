@@ -9,12 +9,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Freeman&display=swap" rel="stylesheet">
   <link rel="shortcut icon" content="favicon.ico" />
-  <link rel="stylesheet" href="w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <link rel="stylesheet" href="/global/navbar.css" />
 <link rel="stylesheet" href="index.css" />
+<link rel="stylesheet" href="w3.css">
 <script src="baremux/index.js" defer></script>
 <script src="epoxy/index.js" defer></script>
 <script src="uv/uv.bundle.js" defer></script>
@@ -24,20 +24,28 @@
 <script src="index.js" defer></script>
 <script type="application/ld+json" defer></script>
 <script src="global/all.js" defer></script>
+<script src="tabs.js" defer></script>
 </head>
 
 <body>
 
   <div id="proxy-div" class="hide-proxy-div">
     <div id="proxy-nav-bar" class="w3-bar">
-      <div class="w3-bar-item proxy-nav-bar-item" style="float: right; cursor: pointer; padding: 8px;"
-        onclick="goHome();">
+      <div class="w3-bar-item w3-bar" id="tabBarTabs">
+        
+      </div>
+      <div class="w3-bar-item w3-display-container" id="newTab" onclick="newTab()">
+        <i class="material-icons w3-display-middle">add</i>
+      </div>
+
+      <div class="w3-bar-item" style="float: right; cursor: pointer; padding: 8px" onclick="goHome();">
         <i class="material-icons">home</i>
       </div>
     </div>
-    <iframe class="tab" id="frame"></iframe>
+    <span id="frames">
+    </span>
   </div>
-
+ 
   <div class="w3-display-container" style="background-color: rgb(29, 30, 34); padding: 10px; height: 80px;">
     <a href="/" class="navbar-title w3-display-left	">RIZZ</a>
 
