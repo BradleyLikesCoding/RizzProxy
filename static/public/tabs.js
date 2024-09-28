@@ -5,14 +5,12 @@ var tabIds = [];
 function newTab(url = "/tab?page=" + __uv$config.encodeUrl("https://google.com")) {
   var el = document.getElementById("tabBarTabs");
   var tabId = getTabId();
-  el.innerHTML += `<div class="tabBarTab w3-bar-item" id="tab ` + tabId + `" style="width: 225px" onclick="openTab(` + tabId + `)">
+  el.innerHTML += `<div class="tabBarTab w3-bar-item" id="tab` + tabId + `" style="width: 225px" onclick="openTab(` + tabId + `)">
   <div style="display: inline-block;
       width: 170px;
       overflow-x: hidden;
       white-space: nowrap;
-      cursor: default;">
-    random website 123 ca43oirjt2o4
-  </div>
+      cursor: default;"></div>
   <span
     style="cursor: pointer; float: right"
     onclick="
@@ -62,8 +60,29 @@ function closeAllTabs() {
 
 function closeTab(id) {
   document.getElementById("frame" + id).remove();
-  tabIds.splice(tabIds.indexOf(id), 1);
+  for(var i = 0; i < tabIds.length; i++) {
+    if(tabIds[i] == id) {
+      tabIds.splice(i, 1);
+      break;
+    }
+  }
   if (currentTab == id && tabIds.length != 0) {
     openTab(currentTab = tabIds[tabIds.length - 1]);
   }
 }
+
+function updateTabTitles() {
+  for(var i = 0; i < tabIds.length; i++) {
+    var frame = document.getElementById("frame" + tabIds[i]).contentDocument.getElementById("uv-frame");
+    var title = frame.contentDocument.title;
+    if(title == "") {
+      title = frame.contentDocument.location.pathname.split('/');
+      title = title[title.length - 1];
+    } else if(frame.contentDocument.readyState != "complete") {
+      title = "Loading...";
+    }
+    document.getElementById("tab" + tabIds[i]).children[0].innerHTML = title;
+  }
+}
+
+setInterval(updateTabTitles, 250);
