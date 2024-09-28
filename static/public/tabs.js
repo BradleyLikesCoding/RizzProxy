@@ -31,7 +31,6 @@ function newTab(url = "/tab?page=" + __uv$config.encodeUrl("https://google.com")
   frame.src = url;
   frame.classList.add("tab");
   frame.id = "frame" + tabId;
-  //document.getElementById("frames").innerHTML += '<iframe src="' + url + '" class="tab" id="frame' + tabId + '"></iframe>';
   document.getElementById("frames").append(frame);
   openTab(tabId)
 
@@ -46,9 +45,11 @@ function getTabId() {
 function openTab(tabId) {
   if(document.getElementById("frame" + currentTab)) {
     document.getElementById("frame" + currentTab).style.display = "none";
+    document.getElementById("tab" + currentTab).style.backgroundColor = "rgb(49, 50, 64)";
   }
   currentTab = tabId;
   document.getElementById("frame" + currentTab).style.display = "block";
+  document.getElementById("tab" + currentTab).style.backgroundColor = "rgb(29, 30, 34)";
 }
 
 function closeAllTabs() {
@@ -78,8 +79,6 @@ function updateTabTitles() {
     if(title == "") {
       title = frame.contentDocument.location.pathname.split('/');
       title = title[title.length - 1];
-    } else if(frame.contentDocument.readyState != "complete") {
-      title = "Loading...";
     }
     document.getElementById("tab" + tabIds[i]).children[0].innerHTML = title;
   }

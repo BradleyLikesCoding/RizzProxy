@@ -130,19 +130,19 @@ html, body {
 }
 
 .tabBarTab {
-  background-color: rgb(29, 30, 34);
+  background-color: rgb(49, 50, 64);
   margin-top: 45px;
   margin-left: 5px;
   height: 45px;
   border-radius: 8px;
   float: left; 
   padding: 8px;
-  transition-property: margin-top;
+  transition-property: margin-top, background-color;
   transition-duration: 0.25s;
 }
 
 #newTab {
-  background-color: rgb(29, 30, 34);
+  background-color: rgb(49, 50, 64);
   margin-top: 5px;
   margin-bottom: 5px;
   margin-left: 10px;
