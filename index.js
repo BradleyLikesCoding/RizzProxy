@@ -102,6 +102,4 @@ function shutdown() {
   process.exit(0);
 }
 
-server.listen({
-  port,
-});
+server.listen(80, "127.0.0.1");
