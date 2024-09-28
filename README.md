@@ -12,6 +12,8 @@
 
 -Browser with multiple tabs, back/forwards arrows, reload button, search/url bar, cloak in about:blank page in new tab, and fullscreen
 
+[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?name=rizzproxy&type=git&repository=BradleyLikesCoding%2FRizz-Proxy&branch=main&builder=buildpack&regions=was&env%5B%5D=&ports=8080%3Bhttp%3B%2F)
+
 <h3>NOTE: Default port is 8080, you may have to change it with an environment variable depending on how you are hosting Rizz Proxy.</h3>
  
 <h3>How to deploy to a server:</h3>
