@@ -1,5 +1,3 @@
-const requireLogin = false
-
 import express from "express";
 import { createServer } from "node:http";
 import { publicPath } from "ultraviolet-static";
@@ -10,19 +8,24 @@ import { join } from "node:path";
 import { hostname } from "node:os";
 import wisp from "wisp-server-node"
 import session from "express-session";
-import bodyParser from "body-parser";
 import crypto from 'crypto';
 import config from "./config.js";
+import proxy from "express-http-proxy";
+import bodyParser from "body-parser";
 
 const app = express();
 
-var jsonParser = bodyParser.json()
+app.use("/image/", proxy("https://images.crazygames.com", {proxyReqPathResolver: req => {
+  return(req.originalUrl.slice(6));
+}}));
 
 app.use(session({
     cookie: { maxAge: 1000 * 60 * 60 },
     resave: false,
     secret: crypto.randomBytes(32).toString('hex')
 }));
+
+var jsonParser = bodyParser.json();
 
 if(config.requireLogin) {
 app.use(jsonParser, function(req, res, next) {

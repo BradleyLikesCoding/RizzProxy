@@ -10,7 +10,7 @@ function getGameHTML(game) {
   return (`
   <div class="game" onclick="openGame('${game["url"]}')">
     <div class="game-image-container">
-      <img class="game-image" src="images/${game["url"].split("/")[game["url"].split("/").length - 2]}.png">
+      <img class="game-image" src="/image/${game["image"]}">
     </div>
     <p class="game-title">
       ${game["name"]}
