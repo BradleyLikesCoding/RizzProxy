@@ -11,6 +11,8 @@
 -Developer console (I used eruda https://github.com/liriliri/eruda)
 
 -Browser with multiple tabs, back/forwards arrows, reload button, search/url bar, cloak in about:blank page in new tab, and fullscreen
+
+<h3>NOTE: Default port is 8080, you may have to change it with an environment variable depending on how you are hosting Rizz Proxy.</h3>
  
 <h3>How to deploy to a server:</h3>
 
@@ -20,6 +22,6 @@
 
 3: Install the nodejs packages (run "npm i")
 
-4: Start the server (run "PORT=80 npm start" or "$env:PORT=80; npm start" depending on your server - Note: Edit the number to change the port it is hosted on)
+4: Start the server (run "PORT=8080 npm start" or "$env:PORT=8080; npm start" depending on your server - Note: Edit the number to change the port it is hosted on)
 
 5: You have successfully deployed Rizz Proxy! 
