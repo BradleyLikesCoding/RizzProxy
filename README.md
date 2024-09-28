@@ -10,9 +10,7 @@
 
 -Developer console (I used eruda https://github.com/liriliri/eruda)
 
--Single tab browser with back/forwards arrows, reload button, search/url bar, cloak in about:blank page in new tab, and fullscreen
-
--Option to disguise the proxy as a 404 page and then require a passcode (read the comment on line one of src/index.js)
+-Browser with multiple tabs, back/forwards arrows, reload button, search/url bar, cloak in about:blank page in new tab, and fullscreen
  
 <h3>How to deploy to a server:</h3>
 
