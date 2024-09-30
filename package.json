@@ -1,0 +1,33 @@
+{
+  "name": "rizzproxy",
+  "version": "1.0.0",
+  "description": "Rizz Proxy",
+  "type": "module",
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=16.0.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "proxy"
+  ],
+  "author": "",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "@titaniumnetwork-dev/ultraviolet": "^2.0.0",
+    "@tomphttp/bare-server-node": "^2.0.0",
+    "body-parser": "^1.20.3",
+    "express": "^4.21.0",
+    "express-session": "^1.18.0",
+    "ultraviolet-static": "file:static",
+    "wisp-server-node": "^1.1.7",
+    "ws": "^8.18.0",
+    "express-http-proxy": "^2.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.36.0",
+    "prettier": "^2.8.4"
+  }
+}
