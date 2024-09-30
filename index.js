@@ -13,6 +13,8 @@ import config from "./config.js";
 import proxy from "express-http-proxy";
 import bodyParser from "body-parser";
 
+const bare = createBareServer("/bare/");
+
 const app = express();
 
 app.use("/image/", proxy("https://images.crazygames.com", {proxyReqPathResolver: req => {
@@ -62,13 +64,19 @@ app.use((req, res) => {
 const server = createServer();
 
 server.on("request", (req, res) => {
+  if (bare.shouldRoute(req)) {
+    bare.routeRequest(req, res);
+  } else {
   res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
   res.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
-  app(req, res);
+    app(req, res);
+  }
 });
 
 server.on("upgrade", (req, socket, head) => {
-  if (req.url.endsWith("/wisp/"))
+  if (bare.shouldRoute(req)) {
+    bare.routeRequest(req, res);
+  } else if (req.url.endsWith("/wisp/"))
     wisp.routeRequest(req, socket, head);
   else
     socket.end();
@@ -99,6 +107,7 @@ process.on("SIGTERM", shutdown);
 function shutdown() {
   console.log("SIGTERM signal received: closing HTTP server");
   server.close();
+  bare.close();
   process.exit(0);
 }
 
