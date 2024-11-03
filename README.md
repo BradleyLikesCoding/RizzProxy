@@ -12,7 +12,7 @@
 
 -Browser with multiple tabs, back/forwards arrows, reload button, search/url bar, cloak in about:blank page in new tab, and fullscreen
 
-[![Deploy to Koyeb]([https://www.koyeb.com/static/images/deploy/button.svg](https://camo.githubusercontent.com/86721113f7f1649ceda6caf7ee264dbe44ce51f3f963c97c0d023de58f30d0f8/68747470733a2f2f62696e6261736862616e616e612e6769746875622e696f2f6465706c6f792d627574746f6e732f627574746f6e732f72656d6164652f6b6f7965622e737667))](https://app.koyeb.com/deploy?name=rizzproxy&type=git&repository=BradleyLikesCoding%2FRizz-Proxy&branch=main&builder=buildpack&regions=was&env%5B%5D=&ports=8080%3Bhttp%3B%2F)
+[![Deploy to Koyeb](https://camo.githubusercontent.com/86721113f7f1649ceda6caf7ee264dbe44ce51f3f963c97c0d023de58f30d0f8/68747470733a2f2f62696e6261736862616e616e612e6769746875622e696f2f6465706c6f792d627574746f6e732f627574746f6e732f72656d6164652f6b6f7965622e737667)](https://app.koyeb.com/deploy?name=rizzproxy&type=git&repository=BradleyLikesCoding%2FRizzProxy&branch=main&builder=buildpack&regions=was&env%5B%5D=&ports=8080%3Bhttp%3B%2F)
 
 <h3>NOTE: Default port is 8080, you may have to change it with an environment variable depending on how you are hosting Rizz Proxy.</h3>
  
